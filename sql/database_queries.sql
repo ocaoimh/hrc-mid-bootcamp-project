@@ -46,3 +46,19 @@ FROM credit_card_data; # 1, 2, 3, 4
 # What are the unique values in the column household_size?
 SELECT DISTINCT household_size
 FROM credit_card_data; # 1, 2, 3, 4, 5, 6, 8, 9
+
+SELECT homes_owned, own_your_home
+FROM credit_card_data;
+
+SELECT DISTINCT own_your_home,COUNT(homes_owned)
+FROM credit_card_data
+WHERE homes_owned = 3
+GROUP BY own_your_home;
+
+SELECT homes_owned, COUNT(*) OVER (PARTITION BY own_your_home) AS count
+FROM credit_card_data
+GROUP BY homes_owned, own_your_home;
+
+Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OVER (PARTITION BY own_your_home) FROM credit_card_data GROUP BY homes_owned, co' at line 1
+Error Code: 1055. Expression #1 of PARTITION BY or ORDER BY clause of window '<unnamed window>' is not in GROUP BY clause and contains nonaggregated column 'credit_card_classification.credit_card_data.own_your_home' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+
