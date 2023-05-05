@@ -55,25 +55,18 @@ FROM credit_card_data
 WHERE homes_owned = 3
 GROUP BY own_your_home;
 
-SELECT homes_owned, COUNT(*) OVER (PARTITION BY own_your_home) AS count
-FROM credit_card_data
-GROUP BY homes_owned, own_your_home;
-
-Error Code: 1064. You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'OVER (PARTITION BY own_your_home) FROM credit_card_data GROUP BY homes_owned, co' at line 1
-Error Code: 1055. Expression #1 of PARTITION BY or ORDER BY clause of window '<unnamed window>' is not in GROUP BY clause and contains nonaggregated column 'credit_card_classification.credit_card_data.own_your_home' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
-
 ## 8 Arrange the data in a decreasing order by the average_balance of the customer. 
 ## Return only the customer_number of the top 10 customers with the highest average_balances in your data.
+SELECT 	*
+FROM credit_card_data;
 
-SELECT customer_number
+SELECT customer_number, average_balance
 FROM credit_card_data
-GROUP BY customer_number
-ORDER BY AVG(balance) DESC
+ORDER BY average_balance DESC
 LIMIT 10;
 
 ## 9 What is the average balance of all the customers in your data?
-
-SELECT AVG(balance) AS avg_balance
+SELECT ROUND(AVG(average_balance),2) AS total_avg_balance
 FROM credit_card_data;
 
 ## 10 
@@ -81,7 +74,7 @@ FROM credit_card_data;
 ##  The returned result should have only two columns, income level and Average balance of the customers.
 ##  Use an alias to change the name of the second column.
 
-SELECT income_level, AVG(balance) AS avg_balance
+SELECT income_level, ROUND(AVG(average_balance),2) AS avg_balance
 FROM credit_card_data
 GROUP BY income_level;
 
@@ -89,26 +82,27 @@ GROUP BY income_level;
 ## The returned result should have only two columns, number_of_bank_accounts_open and Average balance of the customers.
 ## Use an alias to change the name of the second column.
 
-SELECT number_of_bank_accounts_open, AVG(balance) AS avg_balance
+SELECT bank_accounts_open, ROUND(AVG(average_balance),2) AS avg_balance
 FROM credit_card_data
-GROUP BY number_of_bank_accounts_open;
+GROUP BY bank_accounts_open;
 
 ## 3 What is the average number of credit cards held by customers for each of the credit card ratings? 
 ## The returned result should have only two columns, 
 ## rating and average number of credit cards held. Use an alias to change the name of the second column.
 
-SELECT rating, AVG(num_credit_cards) AS avg_num_cards
+SELECT credit_rating, CEILING(AVG(credit_cards_held)) AS avg_num_cards # decided to round up
 FROM credit_card_data
-GROUP BY rating;
+GROUP BY credit_rating;
 
 ## 4 Is there any correlation between the columns credit_cards_held and number_of_bank_accounts_open? 
 ## You can analyse this by grouping the data by one of the variables and then aggregating the results of 
 ## the other column. Visually check if there is a positive correlation or negative correlation or no correlation 
 ## between the variables.
 
-SELECT number_of_bank_accounts_open, AVG(credit_cards_held) AS avg_credit_cards
+SELECT bank_accounts_open, CEILING(AVG(credit_cards_held)) AS avg_credit_cards
 FROM credit_card_data
-GROUP BY number_of_bank_accounts_open;
+GROUP BY bank_accounts_open; 
+# the average number of credit card held is 2, no matter the number of bank accounts a client has (1 to 3). This suggests no correlation between both variables.
 
 ## 11 Your managers are only interested in the customers with the following properties:
 
@@ -119,37 +113,43 @@ GROUP BY number_of_bank_accounts_open;
 
 ## For the rest of the things, they are not too concerned.
 ## Write a simple query to find what are the options available for them?
+
+DROP TEMPORARY TABLE IF EXISTS manager_table;
+CREATE TEMPORARY TABLE manager_table (
+SELECT *
+FROM credit_card_data
+WHERE (credit_rating = 'medium' OR credit_rating = 'high')
+  AND credit_cards_held <= 2
+  AND own_your_home = 'yes'
+  AND household_size >= 3
+  ) ; # This is a new temporary table for managers' use including all the filter provided above.
+  
+## Checking temp table
+SELECT *
+FROM manager_table; 
+
 ## Can you filter the customers who accepted the offers here?
-
 SELECT *
-FROM credit_card_data
-WHERE (credit_rating = 'medium' OR credit_rating = 'high')
-  AND credit_cards_held <= 2
-  AND owns_home = 'yes'
-  AND household_size >= 3;
-
-SELECT *
-FROM credit_card_data
-WHERE accepted_offer = 'yes';
-
-SELECT *
-FROM credit_card_data
-WHERE (credit_rating = 'medium' OR credit_rating = 'high')
-  AND credit_cards_held <= 2
-  AND owns_home = 'yes'
-  AND household_size >= 3;
-  AND accepted_offer = 'yes';
+FROM manager_table
+WHERE offer_accepted = 'yes';
   
   ## 12 Your managers want to find out the list of customers whose average balance is less than the average
   ## balance of all the customers in the database. Write a query to show them the list of such customers. 
   ## You might need to use a subquery for this problem.
-  
+
+# Looking at the entire database  
 SELECT customer_number, average_balance
 FROM credit_card_data
 WHERE average_balance < (SELECT AVG(average_balance) FROM credit_card_data);
 
+# Looking only at the subset managers_table
+SELECT customer_number, average_balance
+FROM manager_table
+WHERE average_balance < (SELECT AVG(average_balance) FROM credit_card_data);
+
 ## 13 Since this is something that the senior management is regularly interested in, create a view of the same query.
 
+DROP VIEW IF EXISTS below_avg_balance_customers;
 CREATE VIEW below_avg_balance_customers AS
 SELECT customer_number, average_balance
 FROM credit_card_data
@@ -179,18 +179,7 @@ GROUP BY mailer_type;
 
 ## 17 Provide the details of the customer that is the 11th least Q1_balance in your database.
 
-SELECT customer_number, Q1_balance
+SELECT customer_number, Q1_balance, ROW_NUMBER() OVER(ORDER BY q1_balance ASC) AS least_rank
 FROM credit_card_data
 ORDER BY Q1_balance ASC
 LIMIT 1 OFFSET 10;
-
-
-
-  
-
-
-
-
-
-
-
