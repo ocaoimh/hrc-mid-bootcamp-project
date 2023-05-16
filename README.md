@@ -12,7 +12,16 @@ Team Mon Amour: <br/>
 
 
 ## Problem to solve
-Lorem
+Only a very few customers accept credit cards offers 94.32% (NO) vs 5.68% (YES)
+
+
+## Method
+**Data collection:** This step involves gathering data from various sources, such as databases, in our case we had one CSV file
+**Data cleaning and transformation:** This step involves cleaning and preprocessing the data to remove any errors, inconsistencies, or missing values. It also includes identifying outliers and handling them appropriately. Furthermore, we treated data imbalances with oversampling. 
+**Data visualization:** This step involves creating various graphs, charts, and other visualizations to understand the data's distribution and identify patterns and trends.
+**Data analysis:** This step involves performing statistical analyses on the data to uncover any relationships between the variables.
+**Data interpretation:** This step involves drawing conclusions from the data analysis and using the findings to inform decision-making or further research
+
 
 ## Key findings
 ### Segments
