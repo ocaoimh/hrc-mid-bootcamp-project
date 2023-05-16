@@ -18,6 +18,9 @@ Lorem
 ## General conclusions
 Lorem
 
+### Presentation 
+We presented our findings on May 6 2023 and you can see the presentation here:<br/>
+[Link to Google Slides version](https://docs.google.com/presentation/d/1xXbAIinpuS4oidB5m7gwRknb2jKs5x3f483AoF_Gr7Q/edit?usp=sharing))
 
 
 ### Project management
