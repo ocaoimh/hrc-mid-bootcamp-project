@@ -66,12 +66,11 @@ and that
 
 
 ## Deliverables 
-1. Presentation 
-We presented our findings on May 6 2023 and you can see the presentation here:<br/>
+1. **Presentation** We presented our findings on May 6 2023 and you can see the presentation here:<br/>
 [Link to Google Slides version](https://docs.google.com/presentation/d/1xXbAIinpuS4oidB5m7gwRknb2jKs5x3f483AoF_Gr7Q/edit?usp=sharing)
-3. [SQL queries](https://github.com/)
-4. [Tableau dashboard ](https://github.com/)
-5. [Python code](https://github.com/)
+2. [SQL queries](https://github.com/)
+3. [Tableau dashboard ](https://github.com/)
+4. [Python code](https://github.com/)
 
 <br/>
 <br/>
