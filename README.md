@@ -1,5 +1,14 @@
-# hrc-mid-bootcamp-project
-Mid bootcamp project
+# Case Study - Classification
+## Why are customers refusing credit cards? What can we do about it?
+Mid-course project: Data Analytics Ironhack Bootcamp, Remote - May 2023 <br/>
 
-Project management here:
+![Ironhack logo](resources/photos/frenccc.png)
+
+Team Mon Amour: <br/>
+- Hugo Pabst
+- Rachelle Flores
+- Cormac O'Keefe
+
+
+
 https://www.notion.so/midproject-ironhack/d89a8a2ca6544a7ab9aa72dcf0b4d6ca?v=fde7a00499124325bc5d471099cfd5c3
