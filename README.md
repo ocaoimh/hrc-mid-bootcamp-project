@@ -65,11 +65,18 @@ and that
 - Customer personas and identities (age, region, education, gender, etc)
 
 
-
-### Presentation 
+## Deliverables 
+1. Presentation 
 We presented our findings on May 6 2023 and you can see the presentation here:<br/>
 [Link to Google Slides version](https://docs.google.com/presentation/d/1xXbAIinpuS4oidB5m7gwRknb2jKs5x3f483AoF_Gr7Q/edit?usp=sharing)
+3. [SQL queries](https://github.com/)
+4. [Tableau dashboard ](https://github.com/)
+5. [Python code](https://github.com/)
 
+<br/>
+<br/>
+
+### 
 
 ### Project management
 You can see how we managed our work and time here:<br/>
