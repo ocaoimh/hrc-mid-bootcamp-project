@@ -36,7 +36,22 @@ and that
 
 
 ## General conclusions
-Lorem
+### Recommendations & next steps
+1. Retarget customers:
+- With newer communication channels e.g. WhatsApp
+- Couple this with demographic data
+
+2. Target these segments:
+- Poor Credit rating
+- Low Income level
+- Small Household size
+- High appetite for Rewards (cash back)
+
+3. Get more data on:
+- Spending patterns and types of purchases (sundries vs big ticket)
+- Customer personas and identities (age, region, education, gender, etc)
+
+
 
 ### Presentation 
 We presented our findings on May 6 2023 and you can see the presentation here:<br/>
