@@ -15,12 +15,25 @@ Team Mon Amour: <br/>
 Lorem
 
 ## Key findings
+### Segments
 - We identifed five criterai for creating customer segments
 2. Credit rating
 3. Income level
 4. Household size
 5. Rewards (cash back)
 6. Communication style
+
+### Data quality 
+- We found that data quality was an impediement to predicting customer behaviour:
+1. High imbalance = lower predictive precision 
+2. Missing data: e.g.,  customers (age, gender, regions)
+
+### Methods
+- We found a model that had the highest degree of accuracy: 
+- Random Forest: 97% prediction accuracy 
+and that 
+- Oversampling will continue to be useful
+
 
 ## General conclusions
 Lorem
