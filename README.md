@@ -69,7 +69,7 @@ and that
 1. **Presentation** We presented our findings on May 6 2023 and you can see the presentation here:<br/>
 [Link to Google Slides version](https://docs.google.com/presentation/d/1xXbAIinpuS4oidB5m7gwRknb2jKs5x3f483AoF_Gr7Q/edit?usp=sharing)
 2. **SQL queries** Data extraction and some data exploration:<br/>
-[Link to SQL queries]([https://docs.google.com/presentation/d/1xXbAIinpuS4oidB5m7gwRknb2jKs5x3f483AoF_Gr7Q/edit?usp=sharing](https://github.com/](https://github.com/ocaoimh/hrc-mid-bootcamp-project/tree/main/sql))
+[Link to SQL queries](https://docs.google.com/presentation/d/1xXbAIinpuS4oidB5m7gwRknb2jKs5x3f483AoF_Gr7Q/edit?usp=sharing](https://github.com/](https://github.com/ocaoimh/hrc-mid-bootcamp-project/tree/main/sql))
 3. **Tableau dashboard** Data visualisations:<br/>
  [Tableau dashboard ](https://github.com/)
 4. **Python files** Exploratory data analysis and predictions using several models:<br/>
