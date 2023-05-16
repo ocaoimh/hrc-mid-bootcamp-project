@@ -2,7 +2,7 @@
 ## Why are customers refusing credit cards? What can we do about it?
 Mid-course project: Data Analytics Ironhack Bootcamp, Remote - May 2023 <br/>
 
-![Ironhack logo](resources/photos/frenccc.png =250x250)
+![Ironhack logo](resources/photos/frenccc.png)
 
 Team Mon Amour: <br/>
 - Hugo Pabst
