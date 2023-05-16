@@ -73,7 +73,8 @@ and that
 3. **Tableau dashboard** Data visualisations:<br/>
  [Tableau dashboard ](https://github.com/)
 4. **Python files** Exploratory data analysis and predictions using several models:<br/>
-4. [Python code](https://github.com/](https://github.com/ocaoimh/hrc-mid-bootcamp-project/tree/main/python)
+[Tableau dashboard ](https://github.com/)
+[Python code](https://github.com/](https://github.com/ocaoimh/hrc-mid-bootcamp-project/tree/main/python)
 
 <br/>
 <br/>
